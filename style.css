@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(31, 31, 31);
+}
+.btn {
+  position: relative;
+  width: 250px;
+  height: 100px;
+  background: linear-gradient(
+    90deg,
+    rgb(116, 255, 77),
+    rgb(104, 242, 255),
+    rgb(131, 90, 255),
+    rgb(255, 74, 204),
+    rgb(116, 255, 77)
+  );
+  border-radius: 50px;
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 900;
+  letter-spacing: 0.5rem;
+  text-align: center;
+  animation: btn 10s linear infinite;
+  background-size: 300%;
+  z-index: 999;
+  border: none;
+}
+.btn:after {
+  content: "";
+  position: absolute;
+  background: inherit;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 50px;
+  filter: blur(5px);
+  z-index: 1;
+  animation: breathe 4s linear infinite;
+  z-index: -1;
+}
+@keyframes btn {
+  from {
+    background-position: 0%;
+  }
+  to {
+    background-position: 300%;
+  }
+}
+@keyframes breathe {
+  from {
+    filter: blur(5px);
+  }
+  50% {
+    filter: blur(15px);
+  }
+  to {
+    filter: blur(5px);
+  }
+}
